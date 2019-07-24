@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.none {
+  display: none;
+}
+.active {
+  display: block;
+}
+.headtop {
+  background: #ffc734;
+  height: 64px;
+  position: relative;
+}
+.headtop .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.headtop .search {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  width: 113px;
+  height: 19px;
+  padding: 1px;
+  background-image: url("/images/search.png");
+}
+.headtop .search .text {
+  width: 110px;
+  height: 13px;
+  padding-top: 6px;
+  background: none;
+  border: 0 none;
+  text-indent: 10px;
+  font-style: 100%;
+}
+.headtop .search .search-btn {
+  position: absolute;
+  width: 30px;
+  height: 19px;
+  top: 0;
+  right: 0;
+  border: 0 none;
+  background: none;
+  cursor: pointer;
+}
+.headtop .en {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.nav {
+  height: 40px;
+  background: #372d2a;
+}
+.nav .nav-lists {
+  text-align: center;
+  list-style: none;
+}
+.nav .nav-lists .list {
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+  line-height: 40px;
+}
+.nav .nav-lists .list .list1 {
+  font-size: 16px;
+  color: #959393;
+}
+.nav .nav-lists .list .list1-child {
+  position: absolute;
+  width: 505px;
+  margin-top: 0px;
+  margin-left: -175px;
+  padding-top: 10px;
+  background: #fff;
+  opacity: 0.8;
+}
+.nav .nav-lists .list .list1-child .left-text {
+  position: relative;
+  float: left;
+  width: 234px;
+  margin-left: 50px;
+}
+.nav .nav-lists .list .list1-child .left-text dl {
+  width: 117px;
+  float: left;
+  text-align: left;
+  min-height: 114px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.nav .nav-lists .list .list1-child .left-text dl dt {
+  display: block;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #3e3a39;
+}
+.nav .nav-lists .list .list1-child .left-text dl dd {
+  line-height: 20px;
+  font-size: 12px;
+  color: #595757;
+}
+.nav .nav-lists .list .list1-child .right-img {
+  float: right;
+  width: 190px;
+  position: relative;
+  margin-top: 30px;
+  margin-right: 30px;
+}
