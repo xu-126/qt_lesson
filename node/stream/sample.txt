@@ -1,0 +1,6 @@
+hello world
+- 许式伟 架构课
+CPU + 存储 + IO
+sample.txt 存储器 => 内存（由CPU调度）
+输出到屏幕，命令行
+CPU 指令 write => 存储器 流操作
