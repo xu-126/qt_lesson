@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <form action="/login" method="POST" name="loginForm">
+        <div class="form-group">
+            <label for="emailIput">Email Address</label><br>
+            <input  type="email" required  id="emailIput" name="emailIput" placeholder="请输入邮箱" pattern="^[0-9a-zA-Z]+@[0-9a-zA-Z]+(.[0-9a-zA-Z]+)$" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="passwordInput">Password</label><br>
+            <input minlength="5" type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="fileInput">File Input</label><br>
+            <input type="file" class="form-control">
+            <p class="help-block"> Example</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> check me out
+            </label>
+        </div>
+        <button class="btn btn-default">Submit</button>
+    </form>
+</body>
+</html>
