@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function bar(a,b) {
+        //     console.log(a,b,arguments);
+        //     let array = Array.from(arguments);
+        //     console.log(array.forEach);
+        // }
+        // bar(1,2);
+        function Foo (a) {
+            this.a = a
+            this.b = a
+        }
+        Foo.prototype.sayA = function() {
+            console.log(this.a)
+        }
+        var fooObj = new Foo(1);
+        fooObj.sayA();
+        console.log(fooObj);
+
+        // Array 是一个Js 内置构造函数
+        let arr = [1,2,3,4]
+        Array.prototype.reverseJoin = function () {
+            return arr.reverse().join();
+        }
+        arr.reverseJoin();
+  
+        // const bar_arrow = (b,b) => {
+        //     return 123
+        // }
+        // bar_arrow(3,4);
+    </script>
+</body>
+</html>
