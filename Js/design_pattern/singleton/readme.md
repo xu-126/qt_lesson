@@ -6,5 +6,8 @@ function Singleton(){
         if(instance){
             return instance
         }
-        return instance = this; 
+        return instance = this; //实例的时候创建出来
     }
+立即执行函数，在返回函数，是构成闭包，常用手段
+生产环境 立即执行函数 创造闭包环境 变量一直在
+闭包函数在运行时，可以引用到生成时闭包环境中的变量
