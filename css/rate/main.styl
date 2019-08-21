@@ -1,0 +1,31 @@
+$main = #ffa822
+$basic = #999999
+
+input 
+    -webkit-appearance none
+    border none 
+    outline none 
+    cursor pointer
+
+.rate-content
+    display flex
+    flex-flow row-reverse 
+    input[name="rate"]
+        font-family "iconfont"
+        font-size 30px
+        padding-right 10px
+        transition transform .2s
+        &::after
+            content '\e73c'
+            color $basic
+            transition color .4s ease
+        &:checked
+            &::after
+                color $main
+                content '\e73c'
+        &:checked ~ input[name="rate"] //兄弟节点
+            &::after
+                color $main
+                content '\e73c'
+        &:hover
+            transform scale(1.5)
