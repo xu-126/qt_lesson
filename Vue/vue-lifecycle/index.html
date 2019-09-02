@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>vue</title>
+</head>
+<body>
+    <div id="app">
+        <div class="msg">{{message}}</div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data(){
+                return {
+                    message:'hello world!'
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate')
+            },
+            created() {
+                console.log('created')
+            },
+            beforeUpdate() { //页面有数据发生变化时执行
+                console.log('beforeUpdate')
+            },
+            Updated() {
+                console.log('Updated')
+            },
+            beforeMount() {
+                console.log('beforeMount')
+            },
+            mounted(){
+                console.log('mounted')
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy')
+            },
+            destroyed() {
+                console.log('destroyed')
+            }
+        })
+    </script>
+</body>
+</html>
