@@ -14,11 +14,11 @@
         }
         //防抖函数
         const debounce = (fn,delay) => {  //1
-            let timer = null;
-            return () => { //4
-                clearTimeout(timer);
+            let timer = null; 
+            return (...args) => { //4
+                clearTimeout(timer); //5
                 timer = setTimeout(() => { //3
-                    fn()
+                    fn.apply(this,args) //  把fn作用域的this绑定 args为fn里的参数
                 },delay)
             }
         }
