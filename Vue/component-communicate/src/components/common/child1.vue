@@ -1,13 +1,12 @@
 <template>
   <div id="child1">
-    {{msg}}{{msg2}}
+    {{msg}}
+    {{msg2}}
     <button @click="fn">按钮</button>
-    <!-- {{test.a}}{{test.b}} -->
     {{a}}
     {{b}}
-    <p>----------------------</p>
-    <button  @click="add">+</button> 
-    <!-- {{oCount}} -->
+    <p>----------------------------------</p>
+    <button @click="add">+</button>
     {{count}}
   </div>
 </template>
@@ -15,22 +14,20 @@
 <script>
 export default {
   name: 'App',
-  data(){
+  data () {
     return {
-      oCount:0
+      oCount: 0
     }
   },
-  props:['msg','msg2','fn','a','b','count','aC'],
-  // created(){
-  //    this.oCount = this.count
+  props: ['msg', 'msg2', 'fn', 'a', 'b', 'count', 'add'],
+  // created () {
+  //   this.oCount = this.count
   // },
-  methods:{
-    // add(){
-    //   this.oCount++
+  methods: {
+    // add () {
+    //   // this.count++
+    //   // this.$emit('addCount')
     // }
-    add() {
-      this.$emit('addCount')
-    }
   }
 }
 </script>

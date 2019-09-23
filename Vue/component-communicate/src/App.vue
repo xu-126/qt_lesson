@@ -1,39 +1,56 @@
 <template>
-  <div id="app"> 
-    <child1 :msg='msg' :msg2='msg2' :fn='appFn' v-bind="test" :count="count" @addCount="countAdd" :add='countAdd'></child1>
-    <!-- 用v-bind 绑定可以拿到数据里的子数据 -->
-    <!-- <router-view/> -->
+  <div id="app">
+    <!-- <img src="./assets/logo.png"> -->
+    <!-- <child1 :msg="msg" v-bind="test" :add="fn"><ild1> -->
+    <!-- <child2><ild2> -->
+    <!-- <child3 @fromChild="hh"><ild3> -->
+    <!-- <span>{{message}}</span> -->
+    <router-view/>
   </div>
 </template>
 
 <script>
-import child1 from '@/components/common/child1'
+import child1 from '@/components/common/child1.vue'
+import child2 from '@/components/common/child2.vue'
+import child3 from '@/components/common/child3.vue'
+
 export default {
   name: 'App',
-  components:{
-    child1
-  },
-  data() {
+  data(){
     return {
-      msg:'给child的礼物',
-      msg2:'再次给礼物',
-      test:{
-        a:1,b:2
+      msg: 'hhh',
+      test: {
+        a:1,
+        b:2
       },
-      count:1
+      count: 1,
+      message: '父组件默认数据'
     }
   },
-  methods:{
-    appFn() {
-      console.log('我是App.vue里面的方法')
-    },
-    countAdd() {
+  components: {
+    child1,
+    child2,
+    child3
+  },
+  methods: {
+    fn(){
+      console.log(123)
       this.count++
+    },
+    hh(e){
+      this.message = e
     }
   }
 }
 </script>
 
 <style>
-
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>

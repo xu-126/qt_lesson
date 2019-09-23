@@ -3,18 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import bus from './bus'
-import Vuex from 'vuex'
-Vue.use(Vuex)
+import fastclick from 'fastclick'
+import VueLazyload from 'vue-lazyload'
+import def_lazy_img from '../static/img/loading.gif'
+
+Vue.use(VueLazyload,{
+  loading:def_lazy_img
+})
+
+fastclick.attach(document.body)
 
 Vue.config.productionTip = false
-var bus = new Vue()
-var eventBus = {
-  install(Vue,options){
-    Vue.prototype.$bus = bus
-  }
-}
-Vue.use(eventBus)
 
 /* eslint-disable no-new */
 new Vue({

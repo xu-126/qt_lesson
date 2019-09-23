@@ -2,24 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-// import bus from './bus'
-import Vuex from 'vuex'
-Vue.use(Vuex)
+
+import toast from './components/Toast/index.js'
 
 Vue.config.productionTip = false
-var bus = new Vue()
-var eventBus = {
-  install(Vue,options){
-    Vue.prototype.$bus = bus
-  }
-}
-Vue.use(eventBus)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   components: { App },
   template: '<App/>'
 })
