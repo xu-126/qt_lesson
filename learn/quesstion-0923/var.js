@@ -25,6 +25,14 @@ var x = 1,
     console.log(z);
     console.log(x);
 
+    // 函数声明
     function foo(a){
         a=100;
     }
+    // 函数表达式
+    var foo2 =function foo(){
+
+    }
+    // var foo2
+    // foo2()
+    // foo2= function()

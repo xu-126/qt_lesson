@@ -9,8 +9,10 @@
 <body>
   <script>
     const res = ['1', '2', '3'].map(parseInt);
+    // '1' 0 parseInt('1',0)  0被视作 10    1
+    // '2' 1 parseInt('2',1)  第二个参数表示第一个参数是几进制  没有1进制所以 NaN
     console.log(res);
-    // [1, 2, 3]
+    // [1,NaN,NaN]
     // 函数是一等公民
     function foo(a,b) {
         console.log(a);
