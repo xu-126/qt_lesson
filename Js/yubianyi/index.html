@@ -15,16 +15,32 @@
         // function test(){
         //     console.log(123)
         // }  
-         function fn(a){
-             console.log(a)
-             var a = 123
-             console.log(a)
-             function a(){}
-             console.log(a)
-             var b = function(){}
-             console.log(b)
-             function d(){}
-         }
+        // 函数体
+        //  function fn(a){
+        //      console.log(a)
+        //      var a = 123
+        //      console.log(a)
+        //      function a(){}
+        //      console.log(a)
+        //      var b = function(){}
+        //      console.log(b)
+        //      function d(){}
+        //  }
+        //预编译过程
+        // GO{
+        //     global:undefined 100
+        //     fn:function(){...}
+        // }
+        var global = 100;
+        function fn(){
+            console.log(global)
+        }
+        // AO{
+            // global:undefined 
+
+        // }
+        fn()
+        
     </script>
 </body>
 </html>
