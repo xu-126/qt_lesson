@@ -66,8 +66,8 @@ module.exports = {
         }
       },
       {
-        test:/\.less$/,
-        loader:'less-loader!style-loader!css-loader'
+        test: /\.less$/,
+        loader: 'less-loader!style-loader!css-loader'
       }
     ]
   },
