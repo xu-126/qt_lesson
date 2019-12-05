@@ -1,25 +1,21 @@
 import React, { Component } from 'react'
-import { is } from 'immutable'
+import { is } from 'immutable';
 
-class BaseComponent extends Component {
-  // 判断是否需要渲染更新
+class BaseCom extends Component {
   shouldComponentUpdate(nextProps, nextState) {
-    const thisProps = this.props || {}
-    // props的长度(属性个数)是否改变
-    if (Object.keys(thisProps).length !== Object.keys(nextProps).length) {
-      // 更新
-      return true
+    const thisProps = this.props || {};
+    if (Object.keys(thisProps).length !== 
+    Object.keys(nextProps).length
+    ) {
+      return true;
     }
-    // props属性个数一样，判断每个属性是否一样 immutable is()
+    // {a: 1, b: 2}  {a: 2, b: 2, c: 3}
     for (const key in nextProps) {
       if (!is(thisProps[key], nextProps[key])) {
-        // 更新
-        return true
+        return true;
       }
     }
-    // 不更新
-    return false
+    return false;
   }
 }
- 
-export default BaseComponent;
+export default BaseCom;
