@@ -8,7 +8,7 @@
                             <div class="note-image">
                                 <div class="lazyload-block">
                                     <div class="lazyload-container loaded" >
-                                        <img src="https://ci.xiaohongshu.com/c31583d8-9094-552b-b57b-0afd0e79a645?imageView2/2/w/1080/format/jpg" 
+                                        <img :src="item0.img" 
                                         class="lazyload lazyload-image loaded" style="width: 186px; height: 293.04px;">
                                     </div>
                                 </div>
@@ -19,8 +19,8 @@
                         <div class="note-append">
                             <div class="user">
                                 <div class="user-image-wrapper">
-                                    <img src="https://ci.xiaohongshu.com/fae1c833-589e-5318-a436-cb6b947ebe74?imageView2/2/w/1080/format/jpg" 
-                                    class="lazyload lazyload-image loaded" style="width: 186px; height: 123.816px;">
+                                    <img :src="item0.userImg" 
+                                    class="lazyload lazyload-image loaded" style="width: 28px; height: 28px;">
                                     <i class="official" style=""></i>
                                 </div>
                                 <span class="name">{{item0.name}}</span>
@@ -153,45 +153,17 @@
 <script>
 // import scroll from '@/components/scroll/scroll.vue'
 export default {
+    props: {
+        notes:{
+            type:Array
+        }
+    },
     // created(){
     //     console.log(item.item0)
     // },
   data(){
       return{
-          notes:[
-              {
-                  note:[
-                  {
-                      img:'https://ci.xiaohongshu.com/97b86c5e-12b8-310f-b5a1-7459c67a6667?imageView2/2/w/540/format/jpg',
-                      name:'RIOM里永烘焙培训学校',
-                      info:'0基础学蛋糕，点❤️立即参与❤️了解学费',
-                      likes:44
-                  },
-                  {
-                      img:'https://ci.xiaohongshu.com/ee377d71-e427-3792-bbba-dd7b470b6413?imageView2/2/w/540/format/jpg',
-                      name:'芭芭拉拉',
-                      info:'毕业啦🎓 悉尼大学毕业指南（cs专业）',
-                      likes:18                  
-                  }
-                ],
-              },
-              {
-                  note:[
-                  {
-                      img:'https://ci.xiaohongshu.com/39460dd2-8be6-3dcd-878e-222f34c46544?imageView2/2/w/540/format/jpg',
-                      name:'朱NaNaBaby',
-                      info:'济州岛ins风咖啡店❗️打卡',
-                      likes:126
-                  },
-                  {
-                      img:'https://ci.xiaohongshu.com/34b09c21-6262-3215-bf0d-b575d1ab5158?imageView2/2/w/540/format/jpg',
-                      name:'文怡',
-                      info:'俱乐部三明治洋快餐在家也能做，超好吃',
-                      likes:111                 
-                  }
-                ]
-            }
-          ]
+          
       }
   }
 }
@@ -204,7 +176,7 @@ export default {
         margin-left px2rem(10px)
         margin-right px2rem(10px)
         .note-container
-            margin px2rem(20px) 0 0
+            margin px2rem(20px) 0 px2rem(100px)
             .note-wrapper
                 display flex
                 // border 1px solid red

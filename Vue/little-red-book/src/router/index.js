@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 // import find from '@/components/pages/find'
-// import search from '@/components/pages/search'
+import search from '@/components/pages/search'
 import index from '@/components/pages/index'
-// import concern from '@/components/pages/concern'
-// import nearby from '@/components/pages/nearby'
+import concern from '@/components/pages/concern'
+import nearby from '@/components/pages/nearby'
 // import me from '@/components/pages/me'
 import Login from '@/components/Login'
 // import Register from '@/components/Register'
@@ -27,31 +27,31 @@ export default new Router({
       name: 'tabD',
       component: tabD
     },
-    // {
-    //   path: '/find',
-    //   name: 'index',
-    //   component: index
-    // },
+    {
+      path: '/find',
+      name: 'index',
+      component: index
+    },
     // {
     //   path: '/shouye',
     //   name: 'index',
     //   component: index
     // },
-    // {
-    //   path: '/search',
-    //   name: 'search',
-    //   component: search
-    // },
-    // {
-    //   path: '/concern',
-    //   name: 'concern',
-    //   component: concern
-    // },
-    // {
-    //   path: '/nearby',
-    //   name: 'nearby',
-    //   component: nearby
-    // },
+    {
+      path: '/search',
+      name: 'search',
+      component: search
+    },
+    {
+      path: '/concern',
+      name: 'concern',
+      component: concern
+    },
+    {
+      path: '/nearby',
+      name: 'nearby',
+      component: nearby
+    },
     // {
     //   path: '/me/:nickname/:username',
     //   name: 'me',

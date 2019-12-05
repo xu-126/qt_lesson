@@ -12,13 +12,17 @@
                         @bottom-error-click="handleBottomError"
                         :disable-top="false"
                         :disable-bottom="false">
-            <div class="item" v-for="(item,index) in dataList" :key="index">{{index}}</div>
+            <note-container :notes="notes"></note-container>
         </garen-loadmore>
     </div>
 </template>
 <script>
+import noteContainer from './noteContainer'
 export default {
   name: "List",
+  components:{
+    noteContainer
+  },
   data() {
     return {
       // 提示文案示例  
@@ -33,7 +37,44 @@ export default {
         nodata:"暂无更多数据",
         error:"请求数据出错，请点击重试",
       },  
-      dataList: [1, 2, 3, 4, 5]    // 模拟数据
+      notes:[
+              {
+                  note:[
+                  {
+                      img:'https://ci.xiaohongshu.com/97b86c5e-12b8-310f-b5a1-7459c67a6667?imageView2/2/w/540/format/jpg',
+                      name:'RIOM里永烘焙培训学校',
+                      userImg:'https://img.xiaohongshu.com/avatar/55a8ff7cd6e4a9462d8ff1c4.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'0基础学蛋糕，点❤️立即参与❤️了解学费',
+                      likes:44
+                  },
+                  {
+                      img:'https://ci.xiaohongshu.com/ee377d71-e427-3792-bbba-dd7b470b6413?imageView2/2/w/540/format/jpg',
+                      name:'芭芭拉拉',
+                      userImg:'https://img.xiaohongshu.com/avatar/5db7c4254dc181000149e5ab.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'毕业啦🎓 悉尼大学毕业指南（cs专业）',
+                      likes:18                  
+                  }
+                ],
+              },
+              {
+                  note:[
+                  {
+                      img:'https://ci.xiaohongshu.com/39460dd2-8be6-3dcd-878e-222f34c46544?imageView2/2/w/540/format/jpg',
+                      name:'朱NaNaBaby',
+                      userImg:'https://img.xiaohongshu.com/avatar/5d560857e1cd0d0001eb78c9.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'济州岛ins风咖啡店❗️打卡',
+                      likes:126
+                  },
+                  {
+                      img:'https://ci.xiaohongshu.com/34b09c21-6262-3215-bf0d-b575d1ab5158?imageView2/2/w/540/format/jpg',
+                      name:'文怡',
+                      userImg:'https://img.xiaohongshu.com/avatar/5d89c0c2b3f0a60001308dad.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'俱乐部三明治洋快餐在家也能做，超好吃',
+                      likes:111                 
+                  }
+                ]
+            }
+          ]    // 模拟数据
     };
   },
   // 实现进入详情页返回列表位置功能-搭配keep-alive
@@ -70,7 +111,31 @@ export default {
       // 定时器用来模拟下拉刷新接口延迟时间
       setTimeout(() => {
          // 模拟数据更新
-        this.dataList = [1, 2, 3, 4, 5];
+        this.notes=[
+              {
+                  note:[
+          
+                  {
+                      img:'https://ci.xiaohongshu.com/ee377d71-e427-3792-bbba-dd7b470b6413?imageView2/2/w/540/format/jpg',
+                      name:'芭芭拉拉',
+                      userImg:'https://img.xiaohongshu.com/avatar/5db7c4254dc181000149e5ab.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'毕业啦🎓 悉尼大学毕业指南（cs专业）',
+                      likes:18                  
+                  }
+                ],
+              },
+              {
+                  note:[
+                  {
+                      img:'https://ci.xiaohongshu.com/34b09c21-6262-3215-bf0d-b575d1ab5158?imageView2/2/w/540/format/jpg',
+                      name:'文怡',
+                      userImg:'https://img.xiaohongshu.com/avatar/5d89c0c2b3f0a60001308dad.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'俱乐部三明治洋快餐在家也能做，超好吃',
+                      likes:111                 
+                  }
+                ]
+            }
+          ]  
         // 数据跟新完调用该方法使garen-loadmore滚到顶部
         this.$refs.vueLoad.onTopLoaded();
       }, 1000);
@@ -101,7 +166,31 @@ export default {
       // 定时器用来模拟上拉加载接口延迟时间
       setTimeout(() => {
       // 模拟数据更新
-        this.dataList.push(1, 2, 3);
+        this.notes=[
+              {
+                  note:[
+          
+                  {
+                      img:'https://ci.xiaohongshu.com/ee377d71-e427-3792-bbba-dd7b470b6413?imageView2/2/w/540/format/jpg',
+                      name:'芭芭拉拉',
+                      userImg:'https://img.xiaohongshu.com/avatar/5db7c4254dc181000149e5ab.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'毕业啦🎓 悉尼大学毕业指南（cs专业）',
+                      likes:18                  
+                  }
+                ],
+              },
+              {
+                  note:[
+                  {
+                      img:'https://ci.xiaohongshu.com/34b09c21-6262-3215-bf0d-b575d1ab5158?imageView2/2/w/540/format/jpg',
+                      name:'文怡',
+                      userImg:'https://img.xiaohongshu.com/avatar/5d89c0c2b3f0a60001308dad.jpg@80w_80h_90q_1e_1c_1x.jpg',
+                      info:'俱乐部三明治洋快餐在家也能做，超好吃',
+                      likes:111                 
+                  }
+                ]
+            }
+          ]  
         /** 
         *  数据跟新完调用该方法使数据加载中提示消失
         *  注意:如果没有更多数据参数传false
