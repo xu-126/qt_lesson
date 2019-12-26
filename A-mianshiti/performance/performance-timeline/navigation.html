@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://b-gold-cdn.xitu.io/v3/static/img/simplify-logo.3e3c253.svg"/>
+    <script>
+        // IntersectionObserver
+        // 页面性能监控
+        let observer = new PerformanceObserver(
+            (list) => {
+                const entries = list.getEntries();
+                for( let entry of entries){
+                    console.log(entry)
+                }
+            }
+        )
+        // NavigationTiming 
+        // resource-timing 资源
+        // user-timing: mark measure
+        observer.observe({
+            entryTypes:['navigation','resource','measure']
+        })
+        // 时间戳
+        performance.mark('calc-start');
+        for(let i = 0;i< 10000;i++){
+
+        }
+        performance.mark('calc-end');
+        performance.measure('calc-for','calc-start','calc-end')
+    </script>
+</body>
+</html>
