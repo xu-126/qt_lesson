@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <img src="./bear.png" alt="">
+    <script src="./bundle.js"></script>
+    <script>
+        // 注册service-worker  要在https环境或者localhost下
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+            .then(res => {
+                console.log('注册成功')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+    </script>
+
+</body>
+</html>
