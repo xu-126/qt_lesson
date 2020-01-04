@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    :root{
+      --main-color: #f00fff;
+      --main-bg: rgb(200, 255, 255);
+    }
+    body{
+      color: var(--main-color);
+      background-color: var(--main-bg);
+      transition: var(--main-bg) 2s ease-in;
+    }
+    body.theme{
+      --main-bg: pink;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    CSS.registerProperty({
+      name: '--main-bg',
+      syntax: '<color>',
+      initialValue: 'rgb(200, 255, 255)',
+      inherits: false
+    })
+    setTimeout(() => {
+      document.body.classList.add('theme')
+    }, 3000);  
+  </script>
+</body>
+</html>
