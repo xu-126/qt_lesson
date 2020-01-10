@@ -1,0 +1,29 @@
+<script>
+    (function(modules) {
+      function require(id) {  // 通过require递归引入
+        function localRequire(relativePath) {
+            return require(
+                modules[id].dependencies[relativePath]
+            )
+        }
+        var exports = {};
+        (function(require,exports,code) {
+          eval(code) // 又有 require  参数localRequire提供require的内容
+        })(localRequire, exports, modules[id].code)
+        return exports
+      }
+      // module.exports = {}
+      return require('./src/index.js');
+    })({
+      './src/hello.js': {
+        code: "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.say = say;\n\nfunction say(name) {\n  return \"hello \".concat(name);\n}"
+      },
+      './src/index.js': {
+        dependencies: {
+            "./hello.js":"./src/hello.js"
+        },
+        code: "\"use strict\";\n\nvar _hello = require(\"./hello.js\");\n\ndocument.write((0, _hello.say)(\"webpack\"));"
+      }
+    })
+</script>
+    
