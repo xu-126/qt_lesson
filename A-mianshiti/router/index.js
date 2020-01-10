@@ -20,7 +20,7 @@ class Route{
 
     //更新
     freshRoute(){
-        this.currentHash = location.hash.slice(1) || '/'
+        this.currentHash = location.hash.slice(1) || '/'     // slice从index = 1 开始取 也就是取#之后的
         this.routes[this.currentHash]()
     }
 }

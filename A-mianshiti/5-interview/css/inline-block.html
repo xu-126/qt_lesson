@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{padding:0px; margin:0px;}
+        .parent{
+            border: 2px solid red;
+            /* 字体设为0 把inline-block间的间隙去掉 */
+            font-size: 0;  
+        }
+        .inb{
+            /* 恢复默认字体 */
+            font-size: initial; 
+            display: inline-block;
+            width: 40px;height: 40px;background: #3498bd;
+            /* https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="inb"></div>
+        <div class="inb"></div>
+        <!-- 注释也属于 parent 的子节点 commit注释节点 -->
+        <!-- 123 -->   
+    </div> 
+    <script>
+        const parent = document.querySelector('.parent')
+        console.log(parent.childNodes)
+        parent.childNodes.forEach(node => {
+            console.log(node,node.nodeType)
+        });
+    </script>     
+</body>
+</html>
