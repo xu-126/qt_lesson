@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <button class="btn" onClick="init()">画树</button>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    // var startX = window.innerWidth * 0.5;
+    // var startY = window.innerHeight;
+
+function init(){
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	ctx.fillStyle = 'rgb(255,255,255)';
+	ctx.beginPath();
+    ctx.arc(230,5,5,0,2*Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+	ctx.moveTo(230, 10);
+	ctx.lineTo(130, 120);
+	ctx.closePath();
+	ctx.strokeStyle = 'black';
+	ctx.lineWidth = 5;
+    ctx.stroke();
+}
+
+</script>
+</html>
