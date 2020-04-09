@@ -1,0 +1,25 @@
+    <!-- // 请实现方法 parse 作用如下：
+// var object = {
+//     b : { c: 4}, d : [{ e : 5}, { e : 6}]
+// }
+// console.log( parse( object, 'b.c' == 4 ))  // true
+// console.log( parse( object, 'd[0].e' == 5 )) // true
+// console.log( parse( object, 'd.0.c' == 5 ))  // true
+// console.log( parse( object, 'f' == undefined ))  // true -->
+
+<script>
+    var object = {
+        b : { c: 4}, d : [{ e : 5}, { e : 6}]
+    }
+    function parse(obj,path){
+        var temp = JSON.parse(JSON.stringify(obj))
+        let res = 'undefined';
+        console.log('path',path)
+        path = path.replace('[','.').replace(']','');
+        path.split('.').forEach(key => {
+            temp = temp[key]
+        })
+        return temp || res
+    }
+    console.log( parse( object, 'd[0].e' ) == 5 )
+</script>
