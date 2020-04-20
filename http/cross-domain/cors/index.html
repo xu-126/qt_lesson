@@ -1,0 +1,39 @@
+<!-- 文件：index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS 跨域</title>
+</head>
+<body>
+    <!-- 通过访问 http://localhost:3000/index.html 获取 index.html 文件并执行其中的 Ajax 请求http://localhost:4000/getDate 接口去获取数据 -->
+    <script>
+        let xhr = new XMLHttpRequest();
+
+        // 正常 cookie 是不允许跨域的
+        document.cookie = 'name=hello';
+
+        // cookie 想要实现跨域必须携带凭证
+        xhr.withCredentials = true;
+
+        // xhr.open('GET', 'http://localhost:4000/getDate', true);
+        xhr.open('PUT', 'http://localhost:4000/getDate', true);
+
+        // 设置名为 name 的自定义请求头
+        xhr.setRequestHeader('name', 'hello');
+
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4) {
+                if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+                    // 打印返回的数据
+                    console.log(xhr.response);
+
+                    // 打印后台设置的自定义头信息
+                    console.log(xhr.getResponseHeader('name'));
+                }
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+</html>
